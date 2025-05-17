@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>InfoApoio Digital</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans&display=swap" rel="stylesheet">
+
+<style>
+  /* Reset */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+
+  body {
+    font-family: 'Open Sans', sans-serif;
+    background: #f8f9fa;
+    color: #333;
+  }
+
+  a {
+    color: #0d6efd;
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+
+  header {
+    position: fixed;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+  }
+
+  .logo img {
+    max-height: 40px;
+  }
+
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  nav ul li {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+
+  /* Hero Banner */
+  .hero {
+    background: linear-gradient(90deg, #4caf50 0%, #8bc34a 100%);
+    color: white;
+    padding: 120px 20px 80px;
+    text-align: center;
+    margin-top: 60px;
+  }
+
+  .hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.5;
+  }
+
+  .btn-primary {
+    background-color: #ffffff;
+    color: #4caf50;
+    font-weight: 700;
+    padding: 15px 40px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .btn-primary:hover {
+    background-color: #388e3c;
+    color: #fff;
+  }
+
+  /* Serviços em cards */
+  #servicos {
+    padding: 60px 20px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+  }
+
+  .card {
+    background: #f8f9fa;
+    border-radius: 15px;
+    padding: 30px;
+    flex: 1 1 280px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover {
+    transform: translateY(-10px);
+  }
+
+  .card-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: #4caf50;
+  }
+
+  .card h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  .card p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.4;
+  }
+
+  /* Depoimentos */
+  #depoimentos {
+    background: #e8f5e9;
+    padding: 60px 20px;
+    max-width: 900px;
+    margin: 0 auto 60px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  }
+  #depoimentos h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #2e7d32;
+  }
+
+  .testimonial {
+    font-style: italic;
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: #2e7d32;
+  }
+  .testimonial strong {
+    display: block;
+    margin-top: 8px;
+    font-weight: 700;
+  }
+
+  /* Contato */
+  #contato {
+    max-width: 600px;
+    margin: 0 auto 60px;
+    text-align: center;
+  }
+
+  #contato h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #2e7d32;
+  }
+
+  #contato p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+
+  #contato a.btn-primary {
+    margin-top: 10px;
+  }
+
+  /* Rodapé */
+  footer {
+    background: #1b5e20;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  /* Ícones simples */
+  .icon {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    color: #4caf50;
+  }
+
+  /* Responsivo */
+  @media(max-width: 768px) {
+    #servicos {
+      flex-direction: column;
+      padding: 40px 20px;
+    }
+
+    .card {
+      flex: 1 1 100%;
+      margin-bottom: 30px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo"><img src="logo-infoapoio.png" alt="InfoApoio Digital" /></a>
+      <ul>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>InfoApoio Digital</h1>
+  <p>Seu parceiro em soluções digitais: infoprodutos, digitalização, revisão, currículos e contratos.</p>
+  <a href="#contato" class="btn-primary">Fale Conosco Agora</a>
+</section>
+
+<section id="servicos" class="container">
+  <div class="card">
+    <div class="card-icon">🗂️</div>
+    <h3>Digitalização de Documentos</h3>
+    <p>Transformamos seus papéis em arquivos digitais organizados e acessíveis.</p>
+  </div>
+  <div class="card">
+    <div class="card-icon">✍️</div>
+    <h3>Revisão e Correção de Documentos</h3>
+    <p>Textos claros, objetivos e sem erros.</p>
+  </div>
+  <div class="card">
+    <div class="card-icon">📄</div>
+    <h3>Criação de Currículos Profissionais</h3>
+    <p>Para você se destacar no mercado de trabalho.</p>
+  </div>
+  <div class="card">
+    <div class="card-icon">📝</div>
+    <h3>Auxílio com Contratos</h3>
+    <p>Elaboração e revisão para sua segurança jurídica.</p>
+  </div>
+  <div class="card">
+    <div class="card-icon">📚</div>
+    <h3>Venda de Infoprodutos</h3>
+    <p>Cursos e materiais digitais para seu crescimento.</p>
+  </div>
+</section>
+
+<section id="depoimentos">
+  <h2>Depoimentos</h2>
+  <div class="testimonial">“Excelente serviço, rápido e profissional. Recomendo!” <strong>— João S.</strong></div>
+  <div class="testimonial">“Ajudaram muito com meu currículo, consegui um emprego novo.” <strong>— Maria T.</strong></div>
+</section>
+
+<section id="contato" class="container">
+  <h2>Fale Conosco</h2>
+  <p>📱 WhatsApp: <a href="https://wa.me/5534991829416">(34) 99182-9416</a></p>
+  <p>📸 Instagram: <a href="https://instagram.com/infoapoio.digital" target="_blank">@infoapoio.digital</a></p>
+  <a href="https://wa.me/5534991829416" class="btn-primary" target="_blank">Fale Conosco Agora</a>
+</section>
+
+<footer>
+  © 2025 InfoApoio Digital | Todos os direitos reservados
+</footer>
+
+</body>
+</html>
